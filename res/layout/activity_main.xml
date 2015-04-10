@@ -10,6 +10,7 @@
     tools:context="ca.georgian.comp1011_assignment5.MainActivity" >
 
     <LinearLayout
+        android:id="@+id/Row0LinearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
@@ -18,192 +19,181 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Score:" />
+            android:gravity="start"
+            android:text="@string/score" />
 
         <TextView
             android:id="@+id/timerTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="left|right"
-            android:text="Timer:" />
+            android:gravity="start"
+            android:text="@string/timer" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/Row1LinearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/imageButton11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cardBackside"
+            android:src="@drawable/cardback" />
+
+        <ImageButton
+            android:id="@+id/imageButton12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cardBackside"
+            android:src="@drawable/cardback" />
+
+        <ImageButton
+            android:id="@+id/imageButton13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cardBackside"
+            android:src="@drawable/cardback" />
+
+        <ImageButton
+            android:id="@+id/imageButton14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cardBackside"
+            android:src="@drawable/cardback" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Row2LinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <ImageButton
+            android:id="@+id/imageButton21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cardBackside"
+            android:src="@drawable/cardback" />
+
+        <ImageButton
+            android:id="@+id/imageButton22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cardBackside"
+            android:src="@drawable/cardback" />
+
+        <ImageButton
+            android:id="@+id/imageButton23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cardBackside"
+            android:src="@drawable/cardback" />
+
+        <ImageButton
+            android:id="@+id/imageButton24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cardBackside"
+            android:src="@drawable/cardback" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Row3LinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <ImageButton
+            android:id="@+id/imageButton31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cardBackside"
+            android:src="@drawable/cardback" />
+
+        <ImageButton
+            android:id="@+id/imageButton32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cardBackside"
+            android:src="@drawable/cardback" />
+
+        <ImageButton
+            android:id="@+id/imageButton33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cardBackside"
+            android:src="@drawable/cardback" />
+
+        <ImageButton
+            android:id="@+id/imageButton34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cardBackside"
+            android:src="@drawable/cardback" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Row4LinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <ImageButton
+            android:id="@+id/imageButton41"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cardBackside"
+            android:src="@drawable/cardback" />
+
+        <ImageButton
+            android:id="@+id/imageButton42"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cardBackside"
+            android:src="@drawable/cardback" />
+
+        <ImageButton
+            android:id="@+id/imageButton43"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cardBackside"
+            android:src="@drawable/cardback" />
+
+        <ImageButton
+            android:id="@+id/imageButton44"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cardBackside"
+            android:src="@drawable/cardback" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Row5LinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical" >
 
-        <LinearLayout
-            android:id="@+id/Row1LinearLayout"
+        <TextView
+            android:id="@+id/infoTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:gravity="center" >
+            android:text="@string/info" />
 
-            <ImageButton
-                android:id="@+id/imageButton11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cardback" />
-
-            <ImageButton
-                android:id="@+id/imageButton12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cardback" />
-
-            <ImageButton
-                android:id="@+id/imageButton13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cardback" />
-
-            <ImageButton
-                android:id="@+id/imageButton14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cardback" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-
-        <LinearLayout
-            android:id="@+id/Row2LinearLayout"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/creatorTextView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:gravity="center" >
-
-            <ImageButton
-                android:id="@+id/imageButton21"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cardback" />
-
-            <ImageButton
-                android:id="@+id/imageButton22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cardback" />
-
-            <ImageButton
-                android:id="@+id/imageButton23"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cardback" />
-
-            <ImageButton
-                android:id="@+id/imageButton24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cardback" />
-
-        </LinearLayout>
-
+            android:text="@string/creator" />
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-
-        <LinearLayout
-            android:id="@+id/Row3LinearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center" >
-
-            <ImageButton
-                android:id="@+id/imageButton31"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cardback" />
-
-            <ImageButton
-                android:id="@+id/imageButton32"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cardback" />
-
-            <ImageButton
-                android:id="@+id/imageButton33"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cardback" />
-
-            <ImageButton
-                android:id="@+id/imageButton34"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cardback" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-
-        <LinearLayout
-            android:id="@+id/Row4LinearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center" >
-
-            <ImageButton
-                android:id="@+id/imageButton41"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cardback" />
-
-            <ImageButton
-                android:id="@+id/imageButton42"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cardback" />
-
-            <ImageButton
-                android:id="@+id/imageButton43"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cardback" />
-
-            <ImageButton
-                android:id="@+id/imageButton44"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cardback" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/infoTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pick a card, cany card. Try to match them up!" />
-
-    <TextView
-        android:id="@+id/createrTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Created by Cody Hutchinson and Blaine Parr" />
 
 </TableLayout>

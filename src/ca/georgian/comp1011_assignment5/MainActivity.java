@@ -23,6 +23,7 @@ public class MainActivity extends Activity {
 	private int _cardOne = -1, _cardTwo = -1;
 	private String _cardOneString, _cardTwoString;
 	private ArrayList<String> _cards;
+	private int _score;
 	private int _pickCounter = 0;
 	private Handler _handler = new Handler();
 	
@@ -118,7 +119,13 @@ public class MainActivity extends Activity {
 			
 				//if the two strings match, but are not the same card picked twice...
 				if(this._cardOneString == this._cardTwoString && this._cardOne != this._cardTwo) {
-					Log.e("Button", "They Match!");
+					
+					//set both cards to be invisible
+					this._imageButtons[this._cardOne].setVisibility(View.INVISIBLE);
+					this._imageButtons[this._cardTwo].setVisibility(View.INVISIBLE);
+					
+					//increase the player's score
+					this._score++;
 				} //if ends
 			
 				this._handler.postDelayed(new Runnable() { 
