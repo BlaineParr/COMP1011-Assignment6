@@ -10,6 +10,7 @@ import java.util.Random;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,10 +20,11 @@ import android.widget.ImageButton;
 public class MainActivity extends Activity {
 
 	//instance variables
-	private ImageButton _cardOne, _cardTwo;
+	private int _cardOne = -1, _cardTwo = -1;
 	private String _cardOneString, _cardTwoString;
 	private ArrayList<String> _cards;
 	private int _pickCounter = 0;
+	private Handler _handler = new Handler();
 	
 	
 	private ImageButton _imageButton11, _imageButton12, _imageButton13, _imageButton14,
@@ -65,7 +67,7 @@ public class MainActivity extends Activity {
 				public void onClick(View v) {
 					
 					Log.e("Button", "Card picked: " + cardString);
-					cardPicked(_imageButtons[cardIndex], cardString);
+					cardPicked(cardIndex, cardString);
 				}
 			});
 		} //for ends
@@ -91,39 +93,49 @@ public class MainActivity extends Activity {
 	}
 	
 	//My Methods////////////////////////////////////////////////////////////////////////////////
-	public void cardPicked(ImageButton card, String cardString) {
-		//check whether the first card or second card has been selected
-		//if its the first card, set cardOneName equal to the cardName
-		if(this._pickCounter % 2 == 0) {
-			this._cardOne = card;
-			this._cardOneString = cardString;
+	public void cardPicked(int card, String cardString) {
+		//if both cards haven't already been picked
+		if(this._cardTwo == -1) {
+			//check whether the first card or second card has been selected
+			//if its the first card, set cardOneName equal to the cardName
+			if(this._pickCounter % 2 == 0) {
+				this._cardOne = card;
+				this._cardOneString = cardString;
 			
-			Log.e("Button", "Card One: " + cardString);
-		} //if ends
-		
-		//else set cardTwoName equal to the cardName
-		else {
-			this._cardTwo = card;
-			this._cardTwoString = cardString;
-			
-			Log.e("Button", "Card Two: " + cardString);
-		} //else ends
-		
-		//if a second card has been selected
-		if(this._cardTwo != null) {
-			
-			//if the two strings match, but are not the same card picked twice...
-			if(this._cardOneString == this._cardTwoString && this._cardOne != this._cardTwo) {
-				Log.e("Button", "They Match!");
+				this._imageButtons[this._cardOne].setImageResource(getResources().getIdentifier(cardString, "drawable", getPackageName()));
 			} //if ends
-			
-			//set both cards to null
-			this._cardOne = null;
-			this._cardTwo = null;
-		} //if ends
 		
-		//increase the pickCounter
-		this._pickCounter++;
+			//else set cardTwoName equal to the cardName
+			else {
+				this._cardTwo = card;
+				this._cardTwoString = cardString;
+			
+				this._imageButtons[this._cardTwo].setImageResource(getResources().getIdentifier(cardString, "drawable", getPackageName()));
+			} //else ends
+		
+			//if a second card has been selected
+			if(this._cardTwo != -1) {
+			
+				//if the two strings match, but are not the same card picked twice...
+				if(this._cardOneString == this._cardTwoString && this._cardOne != this._cardTwo) {
+					Log.e("Button", "They Match!");
+				} //if ends
+			
+				this._handler.postDelayed(new Runnable() { 
+					public void run() {
+						_imageButtons[_cardOne].setImageResource(getResources().getIdentifier("cardback", "drawable", getPackageName()));
+						_imageButtons[_cardTwo].setImageResource(getResources().getIdentifier("cardback", "drawable", getPackageName())); 
+		 			 
+						//set both cards to -1
+						_cardOne = -1;
+						_cardTwo = -1;
+					} //method run ends
+				}, 1000);
+			} //if ends
+		
+			//increase the pickCounter
+			this._pickCounter++;
+		} //if ends
 	} //method cardPicked ends
 	
 	//other stuff DELETE THIS COMMENT LATER/////////////////////////////////////////////////////
