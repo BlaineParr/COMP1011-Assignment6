@@ -1,3 +1,13 @@
+<!--
+ Title: COMP1011 - Project 1 - Memory Game
+ 
+ Description:
+ This is the layout for the Memory Game. It is a Table Layout, using LinearLayout rows to 
+ hold the components of the layout.
+ 
+ Authors: Blaine Parr and Cody Hutchinson
+ Date: April 11, 2015 
+ -->
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/TableLayout1"
@@ -9,8 +19,30 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ca.georgian.comp1011_assignment5.MainActivity" >
 
+    <!-- Row for creatorTextView and infoTextView -->
     <LinearLayout
         android:id="@+id/Row0LinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/creatorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/creator" />
+
+        <TextView
+            android:id="@+id/infoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/info" />
+    </LinearLayout>
+
+    <!-- Row for scoreTextView and timerTextView -->
+    <LinearLayout
+        android:id="@+id/Row1LinearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
@@ -29,11 +61,11 @@
             android:layout_weight="1"
             android:gravity="start"
             android:text="@string/timer" />
-
     </LinearLayout>
 
+    <!-- Row for ImageButtons 11 - 14 -->
     <LinearLayout
-        android:id="@+id/Row1LinearLayout"
+        android:id="@+id/Row2LinearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -43,34 +75,47 @@
             android:id="@+id/imageButton11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
             android:contentDescription="@string/cardBackside"
+            android:padding="5dp"
             android:src="@drawable/cardback" />
 
         <ImageButton
             android:id="@+id/imageButton12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
             android:contentDescription="@string/cardBackside"
+            android:padding="5dp"
             android:src="@drawable/cardback" />
 
         <ImageButton
             android:id="@+id/imageButton13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
             android:contentDescription="@string/cardBackside"
+            android:padding="5dp"
             android:src="@drawable/cardback" />
 
         <ImageButton
             android:id="@+id/imageButton14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
             android:contentDescription="@string/cardBackside"
+            android:padding="5dp"
             android:src="@drawable/cardback" />
 
     </LinearLayout>
 
+    <!-- Row for ImageButtons 21 - 24 -->
     <LinearLayout
-        android:id="@+id/Row2LinearLayout"
+        android:id="@+id/Row3LinearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center" >
@@ -79,33 +124,47 @@
             android:id="@+id/imageButton21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
             android:contentDescription="@string/cardBackside"
+            android:padding="5dp"
             android:src="@drawable/cardback" />
 
         <ImageButton
             android:id="@+id/imageButton22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
             android:contentDescription="@string/cardBackside"
+            android:padding="5dp"
             android:src="@drawable/cardback" />
 
         <ImageButton
             android:id="@+id/imageButton23"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
             android:contentDescription="@string/cardBackside"
+            android:padding="5dp"
             android:src="@drawable/cardback" />
 
         <ImageButton
             android:id="@+id/imageButton24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
             android:contentDescription="@string/cardBackside"
+            android:padding="5dp"
             android:src="@drawable/cardback" />
+
     </LinearLayout>
 
+    <!-- Row for ImageButtons 31 - 34 -->
     <LinearLayout
-        android:id="@+id/Row3LinearLayout"
+        android:id="@+id/Row4LinearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center" >
@@ -114,33 +173,47 @@
             android:id="@+id/imageButton31"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
             android:contentDescription="@string/cardBackside"
+            android:padding="5dp"
             android:src="@drawable/cardback" />
 
         <ImageButton
             android:id="@+id/imageButton32"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
             android:contentDescription="@string/cardBackside"
+            android:padding="5dp"
             android:src="@drawable/cardback" />
 
         <ImageButton
             android:id="@+id/imageButton33"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
             android:contentDescription="@string/cardBackside"
+            android:padding="5dp"
             android:src="@drawable/cardback" />
 
         <ImageButton
             android:id="@+id/imageButton34"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
             android:contentDescription="@string/cardBackside"
+            android:padding="5dp"
             android:src="@drawable/cardback" />
+
     </LinearLayout>
 
+    <!-- Row for ImageButtons 41 - 44 -->
     <LinearLayout
-        android:id="@+id/Row4LinearLayout"
+        android:id="@+id/Row5LinearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center" >
@@ -149,51 +222,42 @@
             android:id="@+id/imageButton41"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
             android:contentDescription="@string/cardBackside"
+            android:padding="5dp"
             android:src="@drawable/cardback" />
 
         <ImageButton
             android:id="@+id/imageButton42"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
             android:contentDescription="@string/cardBackside"
+            android:padding="5dp"
             android:src="@drawable/cardback" />
 
         <ImageButton
             android:id="@+id/imageButton43"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
             android:contentDescription="@string/cardBackside"
+            android:padding="5dp"
             android:src="@drawable/cardback" />
 
         <ImageButton
             android:id="@+id/imageButton44"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#FFFFFF"
             android:contentDescription="@string/cardBackside"
+            android:padding="5dp"
             android:src="@drawable/cardback" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/Row5LinearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/infoTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/info" />
-
-        <TextView
-            android:id="@+id/creatorTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/creator" />
     </LinearLayout>
 
 </TableLayout>
