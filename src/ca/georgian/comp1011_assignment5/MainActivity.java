@@ -10,12 +10,14 @@ import java.util.Random;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -26,7 +28,8 @@ public class MainActivity extends Activity {
 	private int _score;
 	private int _pickCounter = 0;
 	private Handler _handler = new Handler();
-	
+	private TextView _scoreTextView;
+	private TextView _timerTextView;
 	
 	private ImageButton _imageButton11, _imageButton12, _imageButton13, _imageButton14,
 	_imageButton21, _imageButton22, _imageButton23, _imageButton24,
@@ -48,12 +51,20 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+		//generate the 8 pairs of cards
 		this._cards = pickEightCards();
+		
+		//get the scoreTextView
+		this._scoreTextView = (TextView)findViewById(R.id.scoreTextView);
+		
+		//get the timerTextView
+		this._timerTextView = (TextView)findViewById(R.id.timerTextView);
 		
 		//set up all of the buttons for click
 		for(int i = _imageButtons.length - 1; i >= 0; i--) {
 			this._imageButtons[i] = (ImageButton)findViewById(this._ids[i]);
 			
+			//keep track of the cards index, necessary for use in the onClick event
 			final int cardIndex = i;
 			
 			//pick a random card from all of the possibilities
@@ -95,6 +106,21 @@ public class MainActivity extends Activity {
 	
 	//My Methods////////////////////////////////////////////////////////////////////////////////
 	public void cardPicked(int card, String cardString) {
+		
+		//if it's the first card selected, start the timer
+		if(this._pickCounter == 0) {
+			new CountDownTimer(30000, 1000) {
+
+			     public void onTick(long millisUntilFinished) {
+			         _timerTextView.setText("Timer: " + millisUntilFinished / 1000);
+			     } //method onTick ends
+
+			     public void onFinish() {
+			         _timerTextView.setText("done!");
+			     } //method onFinish ends
+			  }.start();
+		} //if ends
+		
 		//if both cards haven't already been picked
 		if(this._cardTwo == -1) {
 			//check whether the first card or second card has been selected
@@ -126,8 +152,12 @@ public class MainActivity extends Activity {
 					
 					//increase the player's score
 					this._score++;
+					
+					//display the updated score
+					this._scoreTextView.setText("Score: " + this._score);
 				} //if ends
 			
+				//wait half a second and then flip the cards
 				this._handler.postDelayed(new Runnable() { 
 					public void run() {
 						_imageButtons[_cardOne].setImageResource(getResources().getIdentifier("cardback", "drawable", getPackageName()));
@@ -137,7 +167,7 @@ public class MainActivity extends Activity {
 						_cardOne = -1;
 						_cardTwo = -1;
 					} //method run ends
-				}, 1000);
+				}, 500);
 			} //if ends
 		
 			//increase the pickCounter
