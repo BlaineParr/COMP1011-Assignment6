@@ -5,7 +5,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="score">Score: 0</string>
-    <string name="timer">Timer:</string>
+    <string name="timer">Timer: 30</string>
     <string name="info">Pick a card, any card. Try to match them up!</string>
     <string name="creator">Created by Cody Hutchinson and Blaine Parr</string>
     <string name="cardBackside">Playing card backside</string>
