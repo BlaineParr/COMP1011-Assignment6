@@ -295,8 +295,8 @@ public class MainActivity extends Activity {
    	 //display the user's final score
         builder.setMessage("Final Score: " + _score);
         
-        //allow the dialog to be canceled
-        builder.setCancelable(true);
+        //disallow the dialog to be canceled
+        builder.setCancelable(false);
         
         //set up the positive button to allow the user to play again
         builder.setPositiveButton("Play Again?", new DialogInterface.OnClickListener() {
